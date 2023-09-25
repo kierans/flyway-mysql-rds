@@ -10,4 +10,4 @@ Docker image for running Flyway against a MySQL DB in RDS
 
 As per [MySQL Security guidelines](https://dev.mysql.com/doc/refman/8.0/en/security-guidelines.html) you should never transmit data over an unecrypted connection. This image tries to verify the `RDS_HOST` certificate against the RDS CA (included in the image)
 
-If you wish to change the `sslMode` used, the `SSL_MODE` env var is available.
+If you wish to change the `sslMode` used, the `SSL_MODE` env var is available. Values must be compliant with the [MySQL JDBC sslMode options](https://dev.mysql.com/doc/connector-j/8.1/en/connector-j-connp-props-security.html)
