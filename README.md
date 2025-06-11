@@ -4,7 +4,7 @@ Docker image for running Flyway against a MySQL DB in RDS
 
 ## Usage
 
-`docker run --rm -e RDS_HOST=db.aws.com kierans777/flyway-mysql-rds:1.0.0 --help`
+`docker run --rm -e RDS_HOST=db.aws.com kierans777/flyway-mysql-rds:1.1.0 --help`
 
 ## SSL
 
