@@ -8,9 +8,7 @@ on:
       branch:
         description: 'Branch to build from'
         required: true
-        type: choice
-        options:
-          - flyway6
+        type: string
 
       tag:
         description: 'Tag for the release'
