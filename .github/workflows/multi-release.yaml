@@ -22,7 +22,7 @@ jobs:
           matrix='[
             {"branch":"flyway6","tag":"${{ github.event.inputs.flyway6_tag }}"}
           ]'
-          echo "matrix=$matrix" >> $GITHUB_OUTPUT
+          echo "matrix=$(echo $matrix | jq --compact-output)" >> $GITHUB_OUTPUT
 
   build-and-release:
     needs: prepare-matrix
