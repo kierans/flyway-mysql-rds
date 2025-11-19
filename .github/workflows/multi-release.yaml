@@ -29,7 +29,7 @@ jobs:
     strategy:
       matrix:
         include: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
-    uses: ./.github/workflows/release.yml
+    uses: ./.github/workflows/release.yaml
     with:
       branch: ${{ matrix.branch }}
       tag: ${{ matrix.tag }}
