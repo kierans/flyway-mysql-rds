@@ -56,12 +56,12 @@ jobs:
           context: .
           push: false
           tags: |
-            ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ inputs.tag }}
-            ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ steps.version.outputs.major }}
-            ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ steps.version.outputs.minor }}
-            ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ inputs.branch }}-latest
-          cache-from: type=gha,ref=${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:buildcache-${{ inputs.branch }}
-          cache-to: type=gha,ref=${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:buildcache-${{ inputs.branch }},mode=max
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ inputs.tag }}
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ steps.version.outputs.major }}
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ steps.version.outputs.minor }}
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ inputs.branch }}-latest
+          cache-from: type=gha,ref=${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:buildcache-${{ inputs.branch }}
+          cache-to: type=gha,ref=${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:buildcache-${{ inputs.branch }},mode=max
 
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
