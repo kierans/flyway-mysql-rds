@@ -8,10 +8,10 @@ Docker image for running Flyway against a MySQL DB in RDS
 
 ## Version table
 
-| **Version** | **Flyway Version** | **RDS CA Version** |
-|-------------|--------------------|--------------------|
-| v1.0.0      | [6.0.3-alpine][1]  | [2015][2]          |
-| v1.1.1      | [6.0.3-alpine][1]  | [2019][3]          |
+| **Version** | **Flyway Version** | **RDS CA Version** | **My SQL LTS Version** |
+|-------------|--------------------|--------------------|------------------------|
+| v1.0.0      | [6.0.3-alpine][1]  | [2015][2]          | 8.0                    |
+| v1.1.1      | [6.0.3-alpine][1]  | [2019][3]          | 8.0                    |
 
 ## SSL
 
