@@ -30,6 +30,7 @@ jobs:
       matrix:
         include: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
     uses: ./.github/workflows/release.yaml
+    secrets: inherit
     with:
       branch: ${{ matrix.branch }}
       tag: ${{ matrix.tag }}

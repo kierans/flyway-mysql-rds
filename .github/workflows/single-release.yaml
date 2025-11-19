@@ -18,6 +18,7 @@ on:
 jobs:
   build-and-release:
     uses: ./.github/workflows/release.yaml
+    secrets: inherit
     with:
       branch: ${{ inputs.branch }}
       tag: ${{ inputs.tag }}
