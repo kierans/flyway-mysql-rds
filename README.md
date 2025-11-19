@@ -6,6 +6,8 @@ Docker image for running Flyway against a MySQL DB in RDS
 
 `docker run --rm -e RDS_HOST=db.aws.com kierans777/flyway-mysql-rds:<version> --help`
 
+(`<version>` is the numerical string of the tagged release eg: `1.1.0`)
+
 ## SSL
 
 As per [MySQL Security guidelines](https://dev.mysql.com/doc/refman/8.0/en/security-guidelines.html) you should never transmit data over an unecrypted connection. This image tries to verify the `RDS_HOST` certificate against the RDS CA (included in the image)
