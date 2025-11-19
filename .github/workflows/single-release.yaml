@@ -1,0 +1,23 @@
+name: Release Single Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to build from'
+        required: true
+        type: choice
+        options:
+          - flyway6
+
+      tag:
+        description: 'Tag for the release'
+        required: true
+        type: string
+
+jobs:
+  build-and-release:
+    uses: ./.github/workflows/release.yml
+    with:
+      branch: ${{ inputs.branch }}
+      tag: ${{ inputs.tag }}
