@@ -1,0 +1,35 @@
+name: Release Multiple Versions
+
+run-name: Release v1:${{ inputs.flyway6_tag }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      flyway6_tag:
+        description: 'Tag for flyway6 branch (e.g., v1.2.3)'
+        required: true
+        type: string
+
+jobs:
+  prepare-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Prepare build matrix
+        id: set-matrix
+        run: |
+          matrix='[
+            {"branch":"flyway6","tag":"${{ github.event.inputs.flyway6_tag }}"}
+          ]'
+          echo "matrix=$matrix" >> $GITHUB_OUTPUT
+
+  build-and-release:
+    needs: prepare-matrix
+    strategy:
+      matrix:
+        include: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
+    uses: ./.github/workflows/multi-release.yml
+    with:
+      branch: ${{ matrix.branch }}
+      tag: ${{ matrix.tag }}
