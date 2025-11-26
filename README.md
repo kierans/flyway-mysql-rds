@@ -26,10 +26,11 @@ scripts, etc.
 
 The following table shows the versions of the image and what that image supports.
 
-| **Version** | **Flyway Version** | **RDS CA Version** | **My SQL LTS Version** |
-|-------------|--------------------|--------------------|------------------------|
-| [v1.0.x][4] | [6.0.3-alpine][1]  | [2015][2]          | 8.0                    |
-| [v1.1.x][5] | [6.0.3-alpine][1]  | [2019][3]          | 8.0                    |
+| **Version** | **Flyway Version** | **RDS CA Version**       | **My SQL LTS Version** |
+|-------------|--------------------|--------------------------|------------------------|
+| [v1.0.x][4] | [6.0.3-alpine][1]  | [2015][2]                | 8.0                    |
+| [v1.1.x][5] | [6.0.3-alpine][1]  | [2019][3]                | 8.0                    |
+| [v1.2.x][9] | [6.0.3-alpine][1]  | [Global Bundle 2024][10] | 8.0                    |
 
 [1]: https://hub.docker.com/layers/flyway/flyway/6.0.3-alpine/images/sha256-1d607a7d04b483a7dfd2c1f27490bc5ffebf69063340a14d74262ee7711b46f4
 [2]: https://s3.amazonaws.com/rds-downloads/rds-ca-2015-root.pem
@@ -39,3 +40,5 @@ The following table shows the versions of the image and what that image supports
 [6]: https://www.red-gate.com/products/flyway/
 [7]: https://dev.mysql.com/doc/refman/8.0/en/security-guidelines.html
 [8]: https://dev.mysql.com/doc/connector-j/8.1/en/connector-j-connp-props-security.html
+[9]: https://hub.docker.com/r/kierans777/flyway-mysql-rds/
+[10]: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesDownload
