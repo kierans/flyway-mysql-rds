@@ -34,5 +34,5 @@ jobs:
             -e SSL_MODE=VERIFY_CA \
             -e FLYWAY_USER=admin \
             -e FLYWAY_PASSWORD=Welcome123 \
-            -v "$(pwd)/sample/migrations:/flyway/sql:ro"
+            -v "$(pwd)/sample/migrations:/flyway/sql:ro" \
             flyway-mysql-rds:dev migrate
