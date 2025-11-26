@@ -23,7 +23,7 @@ jobs:
         id: check
         run: |
           chmod +x ./scripts/check-container.sh
-          ./scripts/check-container.sh
+          ./scripts/check-container.sh flyway-db-migrations-local
         continue-on-error: true
 
       - name: Clean up containers
