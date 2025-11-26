@@ -22,8 +22,8 @@ jobs:
       - name: Run container check
         id: check
         run: |
-          chmod +x check-container.sh
-          ./check-container.sh
+          chmod +x ./scripts/check-container.sh
+          ./scripts/check-container.sh
         continue-on-error: true
 
       - name: Clean up containers
