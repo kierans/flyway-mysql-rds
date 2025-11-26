@@ -1,0 +1,38 @@
+name: Test Migrations via RDS
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to test'
+        required: true
+        type: string
+
+      host:
+        description: 'RDS instance host'
+        required: true
+        type: string
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout ${{ inputs.branch }} branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.version }}
+          fetch-depth: 0
+
+      - name: Build Docker images
+        run: docker compose build
+
+      - name: Migrate RDS instance
+        run: |
+          docker run --rm \
+            -e RDS_HOST=${{ inputs.host }} \
+            -e SSL_MODE=VERIFY_CA \
+            -e FLYWAY_USER=admin \
+            -e FLYWAY_PASSWORD=Welcome123 \
+            -v "$(pwd)/sample/migrations:/flyway/sql:ro"
+            flyway-mysql-rds:dev migrate
