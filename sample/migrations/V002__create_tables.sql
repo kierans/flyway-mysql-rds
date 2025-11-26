@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS company.Orders (
+    id SERIAL PRIMARY KEY
+);
