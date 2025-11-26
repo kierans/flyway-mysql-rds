@@ -18,7 +18,8 @@ If you wish to change the `sslMode` used, the `SSL_MODE` env var is available. V
 
 The project supports multiple versions of Flyway, MySQL and the RDS CA. The versioning 
 scheme uses the major number for the flyway major version, the minor version for when the 
-RDS CA is updated, and the patch version for updates to flyway configuration, scripts, etc.
+base image or RDS CA is updated, and the patch version for updates to flyway configuration, 
+scripts, etc.
 
 The following table shows the versions of the image and what that image supports.
 
