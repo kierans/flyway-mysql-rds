@@ -1,0 +1,37 @@
+name: Test Migrations via Docker
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker images
+        run: docker compose build
+
+      - name: Start containers
+        run: docker compose up -d
+
+      - name: Run container check
+        id: check
+        run: |
+          chmod +x check-container.sh
+          ./check-container.sh
+        continue-on-error: true
+
+      - name: Clean up containers
+        if: always()
+        run: |
+          docker compose down
+          docker container prune -f
+
+      - name: Exit based on check result
+        if: steps.check.outcome == 'failure'
+        run: exit 1
