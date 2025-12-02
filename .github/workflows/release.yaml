@@ -33,13 +33,15 @@ jobs:
           # Remove 'v' prefix if present
           VERSION=$(echo "$TAG" | sed 's/^v//')
           
+          echo "patch=$VERSION" >> $GITHUB_OUTPUT
+          
           # Extract major version
           MAJOR=$(echo "$VERSION" | cut -d'.' -f1)
-          echo "major=v$MAJOR" >> $GITHUB_OUTPUT
+          echo "major=$MAJOR" >> $GITHUB_OUTPUT
           
           # Extract major.minor version
           MINOR=$(echo "$VERSION" | cut -d'.' -f1-2)
-          echo "minor=v$MINOR" >> $GITHUB_OUTPUT
+          echo "minor=$MINOR" >> $GITHUB_OUTPUT
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -56,9 +58,9 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ inputs.tag }}
             ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ steps.version.outputs.major }}
             ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ steps.version.outputs.minor }}
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ steps.version.outputs.patch }}
             ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ inputs.branch }}-latest
           cache-from: type=gha,ref=${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:buildcache-${{ inputs.branch }}
           cache-to: type=gha,ref=${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:buildcache-${{ inputs.branch }},mode=max
