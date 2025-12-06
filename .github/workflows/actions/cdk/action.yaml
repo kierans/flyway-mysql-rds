@@ -5,12 +5,6 @@ runs:
   using: "composite"
 
   steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        ref: master
-        fetch-depth: 0
-
     - name: Configure AWS credentials using OIDC
       uses: aws-actions/configure-aws-credentials@v4
       with:
