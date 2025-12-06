@@ -63,12 +63,24 @@ export class FlywayMySQLRDSGithubIdentityStack extends cdk.Stack {
           sid: "EC2NetworkAccess",
           effect: iam.Effect.ALLOW,
           actions: [
+            "ec2:DescribeRouteTables",
             "ec2:DescribeSubnets",
             "ec2:DescribeSecurityGroups",
-            "ec2:DescribeVpcs"
+            "ec2:DescribeVpcs",
+            "ec2:DescribeVpnGateways"
           ],
           resources: [
             "*"
+          ]
+        }),
+        new iam.PolicyStatement({
+          sid: "CDKDeployRole",
+          effect: iam.Effect.ALLOW,
+          actions: [
+            "sts:AssumeRole"
+          ],
+          resources: [
+            "arn:aws:iam::*:role/cdk-*"
           ]
         })
       ]
