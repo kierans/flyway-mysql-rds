@@ -32,7 +32,7 @@ jobs:
           docker run --rm \
             -e RDS_HOST=${{ inputs.host }} \
             -e SSL_MODE=VERIFY_CA \
-            -e FLYWAY_USER=admin \
+            -e FLYWAY_USER=root \
             -e FLYWAY_PASSWORD=Welcome123 \
             -v "$(pwd)/sample/migrations:/flyway/sql:ro" \
             flyway-mysql-rds:dev migrate
