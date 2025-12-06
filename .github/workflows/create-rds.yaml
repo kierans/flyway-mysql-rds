@@ -20,6 +20,7 @@ jobs:
 
       - name: Setup AWS CDK
         uses: ./.github/actions/cdk
+        secrets: inherit
 
       - name: Deploy RDS stack
         run: | 
