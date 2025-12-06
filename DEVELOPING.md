@@ -4,6 +4,7 @@ The repo uses different branches for different versions of [Flyway][1].
 
 Currently supported branches:
 - `flyway6`
+- `flyway7`
 
 ## Updating flyway version
 

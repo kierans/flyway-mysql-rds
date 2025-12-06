@@ -9,6 +9,7 @@ on:
         type: choice
         options:
           - flyway6
+          - flyway7
 
       tag:
         description: 'Tag for the release'
