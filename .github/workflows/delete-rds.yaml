@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  create-rds:
+  destroy-rds:
     runs-on: ubuntu-latest
 
     steps:
