@@ -1,4 +1,4 @@
-FROM flyway/flyway:6.0.3-alpine
+FROM flyway/flyway:9.22.3-alpine
 
 # So migrations on RDS can trust RDS
 # This isn't sensitive as it's RDS's public cert.
