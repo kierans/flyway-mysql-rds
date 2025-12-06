@@ -20,7 +20,8 @@ jobs:
 
       - name: Setup AWS CDK
         uses: ./.github/actions/cdk
-        secrets: inherit
+        with:
+          role: ${{ secrets.AWS_DB_ROLE_ARN }}
 
       - name: Destroy RDS stack
         run: | 
