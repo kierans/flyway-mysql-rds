@@ -26,11 +26,13 @@ scripts, etc.
 
 The following table shows the versions of the image and what that image supports.
 
-| **Version** | **Flyway Version** | **RDS CA Version**       | **My SQL LTS Version** |
-|-------------|--------------------|--------------------------|------------------------|
-| [v1.0.x][4] | [6.0.3-alpine][1]  | [2015][2]                | 8.0                    |
-| [v1.1.x][5] | [6.0.3-alpine][1]  | [2019][3]                | 8.0                    |
-| [v1.2.x][9] | [6.0.3-alpine][1]  | [Global Bundle 2024][10] | 8.0                    |
+| **Version**  | **Flyway Version**  | **RDS CA Version**       | **My SQL LTS Version** |
+|--------------|---------------------|--------------------------|------------------------|
+| [v1.0.x][4]  | [6.0.3-alpine][1]   | [2015][2]                | 8.0                    |
+| [v1.1.x][5]  | [6.0.3-alpine][1]   | [2019][3]                | 8.0                    |
+| [v1.2.x][11] | [6.0.3-alpine][1]   | [Global Bundle 2024][10] | 8.0                    |
+| [v1.3.x][12] | [6.5.7-alpine][13]  | [Global Bundle 2024][10] | 8.0                    |
+| [v2.0.x][14] | [7.15.0-alpine][15] | [Global Bundle 2024][10] | 8.0                    |
 
 [1]: https://hub.docker.com/layers/flyway/flyway/6.0.3-alpine/images/sha256-1d607a7d04b483a7dfd2c1f27490bc5ffebf69063340a14d74262ee7711b46f4
 [2]: https://s3.amazonaws.com/rds-downloads/rds-ca-2015-root.pem
@@ -42,3 +44,8 @@ The following table shows the versions of the image and what that image supports
 [8]: https://dev.mysql.com/doc/connector-j/8.1/en/connector-j-connp-props-security.html
 [9]: https://hub.docker.com/r/kierans777/flyway-mysql-rds/
 [10]: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html#UsingWithRDS.SSL.CertificatesDownload
+[11]: https://hub.docker.com/repository/docker/kierans777/flyway-mysql-rds/tags/1.2.0/sha256:391a7a2516b8a09853cf1c72edd4c759fa883c8c2672534f41d2f1c8c30d7b41
+[12]: https://hub.docker.com/repository/docker/kierans777/flyway-mysql-rds/tags/1.3.0/sha256:9a0096622f088030f0f59918f10282b9ad0b94bce89d710857d19f1fd1060673
+[13]: https://hub.docker.com/layers/flyway/flyway/6.5.7-alpine/images/sha256-2c928673f2ebbe62fa9c56008319d45556aee18e91a47448daf332a47ad76391
+[14]: https://hub.docker.com/repository/docker/kierans777/flyway-mysql-rds/tags/2.0.0/sha256:192bcdf30990fa5cd4739bb08e35160f66f6c606d4b754274d236385513b1d9d
+[15]: https://hub.docker.com/layers/flyway/flyway/7.15.0/images/sha256-aeb735b0fc384e10247faac2808792bc358856ed92c1dffdd28b58a03fc1ce48
