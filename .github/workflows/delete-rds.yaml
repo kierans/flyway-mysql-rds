@@ -25,5 +25,5 @@ jobs:
 
       - name: Destroy RDS stack
         run: | 
-          cd cdk && npx cdk destroy FlywayMySQLRDSStack --require-approval=never
+          cd cdk && npx cdk destroy FlywayMySQLRDSStack --force
 
