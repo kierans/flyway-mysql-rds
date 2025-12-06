@@ -16,7 +16,7 @@ import { GithubActionsIdentityProvider, GithubActionsRole } from "aws-cdk-github
 export class FlywayMySQLRDSGithubIdentityStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, Object.assign({}, props, {
-      stackName: "FlywayMysqlRDSGithubIdentityStack",
+      stackName: "FlywayMySQLRDSGithubIdentityStack",
       description: "Role for GitHub Actions to assume to access AWS resources for the flyway-mysql-rds project."
     }));
 

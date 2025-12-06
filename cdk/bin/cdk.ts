@@ -7,5 +7,5 @@ import { FlywayMySQLRDSStack } from "../lib/flyway-mysql-rds-stack";
 
 const app = new cdk.App();
 
-new FlywayMySQLRDSGithubIdentityStack(app, "FlywayMysqlRRDSGithubIdentityStack");
+new FlywayMySQLRDSGithubIdentityStack(app, "FlywayMySQLRDSGithubIdentityStack");
 new FlywayMySQLRDSStack(app, "FlywayMySQLRDSStack");
